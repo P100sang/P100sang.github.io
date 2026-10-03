@@ -435,6 +435,32 @@
 </style>
 </head>
 <body data-emphasis="all">
+<div id="gate" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(900px 420px at 100% -10%, rgba(233,30,140,.28), transparent 60%),radial-gradient(800px 380px at -10% 0%, rgba(91,44,111,.45), transparent 55%),radial-gradient(700px 360px at 80% 100%, rgba(230,126,34,.22), transparent 50%),#2a1240;color:#fff;font-family:-apple-system,'PingFang HK','Noto Sans CJK HK',sans-serif">
+  <form id="gateform" style="width:min(420px,92vw);text-align:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:28px;padding:36px 28px 28px;box-shadow:0 24px 60px rgba(0,0,0,.28);backdrop-filter:blur(16px)">
+    <p style="margin:0;letter-spacing:.22em;font-size:12px;font-weight:700;color:#f7b4d4">專屬方案</p>
+    <h1 style="font-size:28px;font-weight:800;line-height:1.35;margin:12px 0 8px">Jackie專屬的<br>退休規劃方案</h1>
+    <p style="margin:0 0 22px;color:rgba(255,255,255,.78);font-size:15px">請輸入密碼，進入你的退休規劃建議</p>
+    <input id="pw" type="password" autocomplete="current-password" placeholder="密碼" style="width:100%;box-sizing:border-box;padding:14px 16px;border-radius:14px;border:0;font-size:16px;text-align:center">
+    <button type="submit" style="margin-top:14px;width:100%;padding:14px;border:0;border-radius:14px;background:linear-gradient(135deg,#E91E8C,#E67E22);color:#fff;font-size:16px;font-weight:700">進入方案</button>
+    <p id="pwerr" style="min-height:1.4em;margin:10px 0 0;color:#ffd0e6;font-size:14px"></p>
+  </form>
+</div>
+<script>
+(function(){
+  var KEY="JACKIE";
+  function open(){var g=document.getElementById("gate"); if(g) g.remove();}
+  try{ if(sessionStorage.getItem("rp1")==="1") open(); }catch(e){}
+  document.getElementById("gateform").addEventListener("submit",function(e){
+    e.preventDefault();
+    if(document.getElementById("pw").value===KEY){
+      try{sessionStorage.setItem("rp1","1");}catch(err){}
+      open();
+    }else{
+      document.getElementById("pwerr").textContent="密碼不正確";
+    }
+  });
+})();
+</script>
 <a class="sr" href="#main">跳至內容</a>
 <header class="top">
   <div class="top-inner">
