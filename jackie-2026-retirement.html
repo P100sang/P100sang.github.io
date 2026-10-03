@@ -400,8 +400,8 @@
     }
     .table .c { display: block; border-top: 1px solid var(--line); }
     .table .c.span { text-align: left; }
-    .table .c.yes::before { content: "有專業規劃　"; color: var(--rose); }
-    .table .c.no::before { content: "沒有專業規劃　"; color: #666; }
+    .table .c.yes::before { content: "有專業理財規劃　"; color: var(--rose); }
+    .table .c.no::before { content: "未有專業理財規劃　"; color: #666; }
     .table .c.span::before { content: "兩種路徑相同　"; color: var(--purple); }
   }
 
@@ -471,8 +471,8 @@
     </div>
     <nav class="tabs" role="tablist" aria-label="建議書章節">
       <button role="tab" id="tab-1" class="hint" data-hint="tab-1" data-tab="1" aria-selected="true" aria-controls="panel-1">1 為何規劃</button>
-      <button role="tab" id="tab-2" class="hint" data-hint="tab-2" data-tab="2" aria-selected="false" aria-controls="panel-2" tabindex="-1">2 沒有規劃</button>
-      <button role="tab" id="tab-3" class="hint" data-hint="tab-3" data-tab="3" aria-selected="false" aria-controls="panel-3" tabindex="-1">3 有規劃</button>
+      <button role="tab" id="tab-2" class="hint" data-hint="tab-2" data-tab="2" aria-selected="false" aria-controls="panel-2" tabindex="-1">2 未有專業理財規劃</button>
+      <button role="tab" id="tab-3" class="hint" data-hint="tab-3" data-tab="3" aria-selected="false" aria-controls="panel-3" tabindex="-1">3 有專業理財規劃</button>
       <button role="tab" id="tab-4" class="hint" data-hint="tab-4" data-tab="4" aria-selected="false" aria-controls="panel-4" tabindex="-1">4 會面總結</button>
       <button role="tab" id="tab-5" class="hint" data-hint="tab-5" data-tab="5" aria-selected="false" aria-controls="panel-5" tabindex="-1">5 下次探討</button>
     </nav>
@@ -500,14 +500,14 @@
 <div class="actions expand-row">
     <button class="btn ghost hint" type="button" data-expand="1" data-hint="exp-1" aria-pressed="false">全部展開</button>
   </div>
-    <div class="seg" role="group" aria-label="對照有規劃與沒有規劃">
+    <div class="seg" role="group" aria-label="對照有專業理財規劃與未有專業理財規劃">
     <button type="button" class="hint" data-hint="path-all" data-set-path="all" aria-pressed="true">並排對照</button>
-    <button type="button" class="hint" data-hint="path-plan" data-set-path="plan" aria-pressed="false">聚焦有規劃</button>
-    <button type="button" class="hint" data-hint="path-none" data-set-path="none" aria-pressed="false">聚焦沒有規劃</button>
+    <button type="button" class="hint" data-hint="path-plan" data-set-path="plan" aria-pressed="false">聚焦有專業理財規劃</button>
+    <button type="button" class="hint" data-hint="path-none" data-set-path="none" aria-pressed="false">聚焦未有專業理財規劃</button>
   </div>
   <div class="choices">
     <article class="choice yes">
-      <span class="tag">有規劃</span>
+      <span class="tag">有專業理財規劃</span>
       <h2>提早退休成為選擇，長壽仍有緩衝</h2>
       <ul>
         <li>享有提早退休的選擇權</li>
@@ -518,7 +518,7 @@
       </ul>
     </article>
     <article class="choice no">
-      <span class="tag">沒有規劃</span>
+      <span class="tag">未有專業理財規劃</span>
       <h2>提早退休無以為繼，正常退休亦欠緩衝</h2>
       <ul>
         <li>不能提早退休</li>
@@ -532,15 +532,15 @@
   <div class="stats">
     <div class="stat p"><b>約 HK$6,000,000</b><span>55 歲公積金 · 相同起點</span></div>
     <div class="stat o"><b>約 HK$11,800,000</b><span>至 90 歲累計開支 · 相同目標</span></div>
-    <div class="stat m"><b>約 77 歲</b><span>沒有規劃 · 資金耗盡</span></div>
+    <div class="stat m"><b>約 77 歲</b><span>未有專業理財規劃 · 資金耗盡</span></div>
     <div class="stat p"><b>約五倍以上</b><span>約 HK$2,000,000 → 逾 HK$11,500,000</span></div>
   </div>
   <div class="panel">
     <h2>數字對照　假設: 提早55歲退休</h2>
     <div class="table" role="table" aria-label="數字對照，假設提早55歲退休">
       <div class="h dim" role="columnheader">數字維度</div>
-      <div class="h yes" role="columnheader">有專業規劃</div>
-      <div class="h no" role="columnheader">沒有專業規劃</div>
+      <div class="h yes" role="columnheader">有專業理財規劃</div>
+      <div class="h no" role="columnheader">未有專業理財規劃</div>
       <div class="c dim" role="rowheader">55 歲可動用公積金</div>
       <div class="c span" role="cell">約 HK$6,000,000（兩種路徑相同起點）</div>
       <div class="c dim" role="rowheader">目標活至 90 歲累計開支</div>
@@ -577,8 +577,8 @@
     <div class="inner">
       <div class="table" role="table" aria-label="質性比較">
         <div class="h dim">比較維度</div>
-        <div class="h yes">有專業規劃</div>
-        <div class="h no">沒有專業規劃</div>
+        <div class="h yes">有專業理財規劃</div>
+        <div class="h no">未有專業理財規劃</div>
         <div class="c dim">現金流</div>
         <div class="c yes">65 歲起由規劃戶口持續提款，並隨通脹調整</div>
         <div class="c no">依賴一筆過公積金，逐年提用至罄</div>
@@ -603,8 +603,8 @@
     <p class="gold">善用資產的時間差，可產生額外約 HK$9,500,000 退休現金流，使提早退休變得踏實。這筆額外現金流約相當於約八年年薪（月薪約 HK$94,000 × 12 × 8 ≈ HK$9,024,000）。</p>
   </div>
   <div class="actions">
-    <button class="btn hint" type="button" data-hint="cta-3" data-goto="3">看有規劃的時間軸</button>
-    <button class="btn ghost hint" type="button" data-hint="cta-2" data-goto="2">看沒有規劃的時間軸</button>
+    <button class="btn hint" type="button" data-hint="cta-3" data-goto="3">看有專業理財規劃的時間軸</button>
+    <button class="btn ghost hint" type="button" data-hint="cta-2" data-goto="2">看未有專業理財規劃的時間軸</button>
   </div>
   <p class="quiet">客戶：女教師 · 主要家人為母親 · 自置物業</p>
   <footer class="foot"><span>只作參考之用</span><span>第 1／5 頁</span></footer>
@@ -612,7 +612,7 @@
 
 <section class="view" id="panel-2" data-page="2" role="tabpanel" aria-labelledby="tab-2">
   <div class="page-head">
-  <p class="kicker"><i></i>第 2 頁 · 沒有規劃</p>
+  <p class="kicker"><i></i>第 2 頁 · 未有專業理財規劃</p>
     <p class="byline">by Regional Director - SANG Chan</p>
   </div>
   <h1>沒有安排專業規劃的<em>人生時間軸</em></h1>
@@ -627,8 +627,8 @@
   </div>
     <div class="toolbar">
     <div class="seg" role="group" aria-label="規劃路徑">
-      <button type="button" class="hint" data-hint="goto-2" data-goto="2" aria-pressed="true">沒有規劃</button>
-      <button type="button" class="hint" data-hint="goto-3" data-goto="3" aria-pressed="false">有規劃</button>
+      <button type="button" class="hint" data-hint="goto-2" data-goto="2" aria-pressed="true">未有專業理財規劃</button>
+      <button type="button" class="hint" data-hint="goto-3" data-goto="3" aria-pressed="false">有專業理財規劃</button>
     </div>
     <div class="seg warm" role="group" aria-label="退休年齡情景">
       <button type="button" class="hint" data-hint="age-55" data-set-age="55" aria-pressed="true">情景 A · 55 歲</button>
@@ -652,7 +652,7 @@
       <div class="node"><span class="dot"></span><span class="age">78–90 歲</span><span class="cap">約 13 年缺口</span></div>
     </div>
     <label class="tl-lab">拖行滑桿
-      <input type="range" class="tl-range hint" data-hint="tl-n2a" min="0" max="4" step="1" value="0" aria-label="沒有規劃、55 歲時間軸">
+      <input type="range" class="tl-range hint" data-hint="tl-n2a" min="0" max="4" step="1" value="0" aria-label="未有專業理財規劃、55 歲時間軸">
     </label>
     <div class="detail on" id="n2a1"><h3>45 歲 · 在職，尚未另作規劃</h3><p>月薪約 HK$94,000。自置物業仍有按揭。年開支現值約 HK$159,000（月基本開支現值約 HK$12,000，另加年特別開支現值約 HK$15,000）。生活目前由薪金承擔，退休資金仍未分開安排。</p></div>
     <div class="detail" id="n2a2"><h3>55 歲 · 一筆過提取，開始純蠶食</h3><p>教師公積金須於退休時一筆過提取，約 HK$6,000,000；提取後不再有投資回報。首年開支面值約 HK$204,329，同時仍要面對剩餘按揭。其後只靠本金支付開支。</p></div>
@@ -676,7 +676,7 @@
       <div class="node"><span class="dot"></span><span class="age">約 90 歲</span><span class="cap">本金約歸零</span></div>
     </div>
     <label class="tl-lab">拖行滑桿
-      <input type="range" class="tl-range hint" data-hint="tl-n2b" min="0" max="3" step="1" value="0" aria-label="沒有規劃、65 歲時間軸">
+      <input type="range" class="tl-range hint" data-hint="tl-n2b" min="0" max="3" step="1" value="0" aria-label="未有專業理財規劃、65 歲時間軸">
     </label>
     <div class="detail on" id="n2b1"><h3>45 歲 · 延至 65 歲才提取</h3><p>繼續在職並累積公積金，生活開支仍由薪金承擔。提取時點推後十年，按揭或已清還，或已接近清還。延遲起步，只是把純蠶食押後，路徑本質未變。</p></div>
     <div class="detail" id="n2b2"><h3>65 歲 · 一筆過約 HK$10,000,000</h3><p>退休時提取公積金約 HK$10,000,000，其後以這筆本金應付生活。首年開支面值約 HK$262,581。提取之後不再有投資回報。</p></div>
@@ -693,7 +693,7 @@
 
 <section class="view" id="panel-3" data-page="3" role="tabpanel" aria-labelledby="tab-3">
   <div class="page-head">
-  <p class="kicker"><i></i>第 3 頁 · 有規劃</p>
+  <p class="kicker"><i></i>第 3 頁 · 有專業理財規劃</p>
     <p class="byline">by Regional Director - SANG Chan</p>
   </div>
   <h1>有安排專業規劃的<em>人生時間軸</em></h1>
@@ -703,8 +703,8 @@
   </div>
     <div class="toolbar">
     <div class="seg" role="group" aria-label="規劃路徑">
-      <button type="button" class="hint" data-hint="goto-2" data-goto="2" aria-pressed="false">沒有規劃</button>
-      <button type="button" class="hint" data-hint="goto-3" data-goto="3" aria-pressed="true">有規劃</button>
+      <button type="button" class="hint" data-hint="goto-2" data-goto="2" aria-pressed="false">未有專業理財規劃</button>
+      <button type="button" class="hint" data-hint="goto-3" data-goto="3" aria-pressed="true">有專業理財規劃</button>
     </div>
     <div class="seg warm" role="group" aria-label="退休年齡情景">
       <button type="button" class="hint" data-hint="age-55" data-set-age="55" aria-pressed="true">情景 A · 55 歲</button>
@@ -733,7 +733,7 @@
       <div class="node" data-phase="harvest"><span class="dot"></span><span class="age">約 90 歲</span><span class="cap">仍有緩衝</span></div>
     </div>
     <label class="tl-lab">拖行滑桿
-      <input type="range" class="tl-range hint" data-hint="tl-n3a" min="0" max="4" step="1" value="0" aria-label="有規劃、55 歲時間軸">
+      <input type="range" class="tl-range hint" data-hint="tl-n3a" min="0" max="4" step="1" value="0" aria-label="有專業理財規劃、55 歲時間軸">
     </label>
     <div class="detail on" id="n3a1"><h3>播種 · 45 至 55 歲</h3><p>每年約 HK$200,000，連續約 10 年，累計投入約 HK$2,000,000。期間仍在職，並繼續累積公積金。這十年是把未來現金流先種下去。</p></div>
     <div class="detail" id="n3a2"><h3>55 歲 · 提早退休，公積金作過渡</h3><p>提取公積金約 HK$6,000,000，用作過渡期的生活來源。規劃戶口繼續成長，尚未開始主要提款，提早退休因此變得可行。</p></div>
@@ -751,7 +751,7 @@
       </div>
       <div class="meter" aria-hidden="true"><i class="in"></i><i class="flow"></i><i class="left"></i></div>
       <div class="meter-key"><span>白 · 投入</span><span>粉 · 現金流</span><span>橙 · 剩餘</span></div>
-      <p>合計資產效果逾約 HK$11,500,000（約五倍以上）。相對投入，約增加 HK$9,500,000 的現金流與剩餘價值。對照沒有規劃的 55 歲路徑：約於 77 歲耗盡，其後約有 13 年缺口。</p>
+      <p>合計資產效果逾約 HK$11,500,000（約五倍以上）。相對投入，約增加 HK$9,500,000 的現金流與剩餘價值。對照未有專業理財規劃的 55 歲路徑：約於 77 歲耗盡，其後約有 13 年缺口。</p>
     </div>
   </div>
 
@@ -770,12 +770,12 @@
       <div class="node"><span class="dot"></span><span class="age">約 90 歲</span><span class="cap">仍可從容</span></div>
     </div>
     <label class="tl-lab">拖行滑桿
-      <input type="range" class="tl-range hint" data-hint="tl-n3b" min="0" max="3" step="1" value="0" aria-label="有規劃、65 歲時間軸">
+      <input type="range" class="tl-range hint" data-hint="tl-n3b" min="0" max="3" step="1" value="0" aria-label="有專業理財規劃、65 歲時間軸">
     </label>
     <div class="detail on" id="n3b1"><h3>45 歲 · 播種年期可以調整</h3><p>若選擇 65 歲才退休，仍建議及早以專業規劃作主軸。供款銀碼與年期，視可支配收入與目標生活水平而定；較晚起步亦可以。本情景不另設第二套數字，具體安排留待下次會面，按實際起步年期再定。</p></div>
     <div class="detail" id="n3b2"><h3>65 歲 · 主要收入來自規劃戶口</h3><p>專業規劃宜作為主要退休收入，以抗通脹提款支撐整段退休生活，並在戶口內保留緩衝，而不是把生活完全押在一筆會用完的公積金上。</p></div>
     <div class="detail" id="n3b3"><h3>公積金約 HK$10,000,000 · 用來錦上添花</h3><p>延至 65 歲，公積金約達 HK$10,000,000。這筆資金可按能力與意願，進一步提升退休生活質素，並保留獨立緊急緩衝，而不是被迫成為唯一的生活本金。</p></div>
-    <div class="detail" id="n3b4"><h3>約 90 歲 · 對照之下仍有餘地</h3><p>沒有規劃的 65 歲路徑，終點仍是本金歸零。有規劃則以持續現金流為主軸，長壽階段仍可保留剩餘價值。這是更從容、而不是僅僅「剛剛好用完」的安排。</p></div>
+    <div class="detail" id="n3b4"><h3>約 90 歲 · 對照之下仍有餘地</h3><p>未有專業理財規劃的 65 歲路徑，終點仍是本金歸零。有專業理財規劃則以持續現金流為主軸，長壽階段仍可保留剩餘價值。這是更從容、而不是僅僅「剛剛好用完」的安排。</p></div>
   </div>
   <footer class="foot"><span>只作參考之用</span><span>第 3／5 頁</span></footer>
 </section>
@@ -814,8 +814,8 @@
       <ul>
         <li>55 歲可動用：約 HK$6,000,000</li>
         <li>65 歲可動用：約 HK$10,000,000</li>
-        <li>沒有規劃、55 歲退：約於 77 歲耗盡，其後約 13 年缺口</li>
-        <li>沒有規劃、65 歲退：可蠶食至約 90 歲，惟終歸歸零</li>
+        <li>未有專業理財規劃、55 歲退：約於 77 歲耗盡，其後約 13 年缺口</li>
+        <li>未有專業理財規劃、65 歲退：可蠶食至約 90 歲，惟終歸歸零</li>
       </ul>
     </article>
     <article class="card">
@@ -898,7 +898,7 @@
     <span>55 歲提早退休可行</span>
     <span>65 歲抗通脹提款</span>
     <span>投入約 HK$2,000,000 → 效果逾約 HK$11,500,000</span>
-    <span>沒有規劃、55 歲退：約 77 歲耗盡 · 13 年缺口</span>
+    <span>未有專業理財規劃、55 歲退：約 77 歲耗盡 · 13 年缺口</span>
   </div>
   <footer class="foot"><span>只作參考之用</span><span>第 5／5 頁</span></footer>
 </section>
