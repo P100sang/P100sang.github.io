@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Jackie的退休規劃方案 · 退休規劃建議報告</title>
+<script>document.documentElement.classList.add("js");</script>
+<style>
+  :root {
+    --purple: #5B2C6F;
+    --purple-deep: #3e1c4e;
+    --magenta: #E91E8C;
+    --rose: #C2185B;
+    --orange: #E67E22;
+    --amber: #C45F10;
+    --ink: #1a1220;
+    --muted: #5c4a66;
+    --line: #eadff0;
+    --bg: #f6f1f8;
+    --card: #ffffff;
+    --lilac: #f3eaf7;
+    --blush: #fce4f0;
+    --peach: #fef0e4;
+    --shadow: 0 10px 30px rgba(91, 44, 111, 0.08);
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background:
+      radial-gradient(900px 420px at 100% -10%, rgba(233, 30, 140, 0.16), transparent 60%),
+      radial-gradient(800px 380px at -10% 0%, rgba(91, 44, 111, 0.18), transparent 55%),
+      radial-gradient(700px 360px at 80% 100%, rgba(230, 126, 34, 0.12), transparent 50%),
+      var(--bg);
+    font-family: "Noto Sans CJK HK", "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  button, summary { font-family: inherit; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--magenta); outline-offset: 2px; }
+  .sr {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .top {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 6px 20px rgba(91, 44, 111, 0.05);
+  }
+  .top-inner {
+    max-width: 1100px; margin: 0 auto; padding: 10px 16px 0;
+    display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap;
+  }
+  .brand { padding-bottom: 10px; min-width: 180px; }
+  .brand b { display: block; color: var(--purple); font-size: 1.05rem; letter-spacing: 0.02em; }
+  .brand span { color: var(--rose); font-size: 0.78rem; font-weight: 700; }
+  .tabs {
+    display: flex; gap: 6px; flex: 1; overflow-x: auto;
+    padding-bottom: 8px; scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs button {
+    border: 1px solid transparent; background: transparent; color: var(--muted);
+    border-radius: 999px; padding: 8px 12px; font-weight: 700; font-size: 0.92rem;
+    white-space: nowrap; min-height: 44px;
+  }
+  .tabs button[aria-selected="true"] {
+    background: linear-gradient(135deg, var(--purple), #7a3b92);
+    color: #fff; box-shadow: 0 6px 16px rgba(91, 44, 111, 0.25);
+  }
+  .progress { height: 4px; background: #efe4f3; }
+  .progress > span {
+    display: block; height: 100%; width: 20%;
+    background: linear-gradient(90deg, var(--purple), var(--magenta), var(--orange));
+    transition: width 0.35s ease;
+  }
+  main { max-width: 1100px; margin: 0 auto; padding: 22px 16px 48px; }
+  .view { margin-bottom: 28px; }
+  .js .view { display: none; }
+  .js .view.on { display: block; animation: rise 0.45s ease; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--rose); font-weight: 800; font-size: 0.82rem; letter-spacing: 0.08em;
+  }
+  .kicker i {
+    width: 10px; height: 10px; border-radius: 50%; display: inline-block;
+    background: linear-gradient(135deg, var(--magenta), var(--orange));
+  }
+  h1 {
+    margin: 6px 0 8px; font-size: clamp(1.7rem, 3vw, 2.35rem);
+    line-height: 1.25; color: var(--purple); letter-spacing: -0.02em;
+  }
+  h1 em { font-style: normal; color: var(--magenta); }
+  .lead { margin: 0 0 16px; color: var(--muted); max-width: 68ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; list-style: none; }
+  .chips li {
+    background: var(--lilac); color: var(--purple); border: 1px solid #e0cceb;
+    border-radius: 999px; padding: 6px 12px; font-weight: 700; font-size: 0.92rem;
+  }
+  .chips li.pink { background: var(--blush); color: var(--rose); border-color: #f5b8d4; }
+  .chips li.orange { background: var(--peach); color: var(--amber); border-color: #f5c89a; }
+  .seg {
+    display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px;
+    background: #efe6f3; margin: 0 8px 14px 0; flex-wrap: wrap;
+  }
+  .seg button {
+    border: 0; background: transparent; color: var(--purple);
+    border-radius: 999px; padding: 8px 14px; font-weight: 800; min-height: 40px;
+  }
+  .seg button[aria-pressed="true"] {
+    background: #fff; color: var(--rose);
+    box-shadow: 0 4px 14px rgba(91, 44, 111, 0.14);
+  }
+  .seg.warm button[aria-pressed="true"] { color: var(--amber); }
+  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+  .choice {
+    border-radius: var(--radius); padding: 18px 18px 16px; color: #fff;
+    box-shadow: var(--shadow); transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    position: relative; overflow: hidden;
+  }
+  .choice::after {
+    content: ""; position: absolute; width: 140px; height: 140px; border-radius: 50%;
+    right: -40px; top: -50px; background: rgba(255,255,255,0.12);
+  }
+  .choice.yes { background: linear-gradient(145deg, #5B2C6F 0%, #8a3f7a 55%, #E91E8C 140%); }
+  .choice.no { background: linear-gradient(145deg, #2c2c2c 0%, #4d4d4d 100%); }
+  .choice .tag {
+    display: inline-block; font-weight: 800; border-radius: 999px;
+    padding: 4px 12px; margin-bottom: 8px; position: relative;
+  }
+  .choice.yes .tag { background: var(--magenta); }
+  .choice.no .tag { background: var(--orange); color: #fff; }
+  .choice h2 { margin: 0 0 8px; font-size: 1.15rem; position: relative; }
+  .choice ul { margin: 0; padding-left: 1.1em; position: relative; }
+  .choice li { margin: 3px 0; }
+  body[data-emphasis="plan"] .choice.no,
+  body[data-emphasis="none"] .choice.yes { opacity: 0.55; transform: none; }
+  body[data-emphasis="plan"] .choice.yes,
+  body[data-emphasis="none"] .choice.no { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(91,44,111,0.2); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 18px; }
+  .stat {
+    background: var(--card); border-radius: 14px; padding: 12px 12px 10px;
+    border: 1px solid var(--line); box-shadow: var(--shadow);
+  }
+  .stat b {
+    display: block; font-size: clamp(1.25rem, 2vw, 1.7rem); line-height: 1.15;
+    font-variant-numeric: tabular-nums; letter-spacing: -0.03em;
+  }
+  .stat span { color: var(--muted); font-size: 0.82rem; font-weight: 700; }
+  .stat.p b { color: var(--purple); }
+  .stat.m b { color: var(--rose); }
+  .stat.o b { color: var(--amber); }
+  .panel {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 16px; margin-bottom: 14px;
+  }
+  .panel h2, .card h3 { margin: 0 0 10px; color: var(--purple); font-size: 1.15rem; }
+  .table { display: grid; grid-template-columns: 1.25fr 1fr 1fr; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+  .table .h, .table .c {
+    padding: 10px 12px; border-top: 1px solid var(--line);
+  }
+  .table .h { border-top: 0; font-weight: 800; text-align: center; }
+  .table .h.dim { background: var(--purple); color: #fff; text-align: left; }
+  .table .h.yes { background: var(--magenta); color: #fff; }
+  .table .h.no { background: #5e5e5e; color: #fff; }
+  .table .c.dim { background: #faf6fc; color: var(--purple); font-weight: 800; }
+  .table .c.yes { background: #fff; font-weight: 700; }
+  .table .c.no { background: #fafafa; color: #444; }
+  .table .c.span { grid-column: 2 / span 2; text-align: center; background: #f8f4fa; color: var(--purple); font-weight: 800; }
+  .table .row:nth-child(even) .c.yes { background: #fdf5fa; }
+  .table .row:nth-child(even) .c.no { background: #f6f6f6; }
+  body[data-emphasis="plan"] .c.no { opacity: 0.4; }
+  body[data-emphasis="none"] .c.yes { opacity: 0.4; }
+  .hi { color: var(--rose); }
+  .ok { color: var(--purple); }
+  details.fold {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    margin-bottom: 14px; box-shadow: var(--shadow);
+  }
+  details.fold summary {
+    cursor: pointer; padding: 14px 16px; font-weight: 800; color: var(--purple);
+    list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  }
+  details.fold summary::-webkit-details-marker { display: none; }
+  details.fold summary::after {
+    content: "+"; font-size: 1.3rem; color: var(--magenta); line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  details.fold[open] summary::after { content: "–"; }
+  details.fold .inner { padding: 0 16px 16px; }
+  .insight {
+    background: linear-gradient(90deg, var(--peach), var(--blush));
+    border-left: 5px solid var(--orange); border-radius: 0 16px 16px 0;
+    padding: 14px 16px; margin-bottom: 14px;
+  }
+  .insight strong { color: var(--purple); }
+  .gold {
+    margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(196, 95, 16, 0.45);
+    font-weight: 800; color: var(--purple);
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .btn {
+    border: 0; border-radius: 999px; padding: 10px 16px; font-weight: 800; min-height: 44px;
+    background: var(--purple); color: #fff;
+  }
+  .btn.ghost { background: #fff; color: var(--purple); border: 1px solid #e0cceb; }
+  .btn.pink { background: var(--magenta); }
+  .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .scenario { }
+  .js [data-age-panel] { display: none; }
+  .js [data-age-panel].on { display: block; animation: rise 0.4s ease; }
+  .verdict {
+    text-align: center; font-size: clamp(1.35rem, 3vw, 1.9rem); font-weight: 800;
+    border-radius: 14px; padding: 12px; margin: 8px 0 14px;
+  }
+  .verdict.bad { background: var(--blush); color: var(--rose); border: 1px solid #f5b8d4; }
+  .verdict.warn { background: var(--peach); color: var(--amber); border: 1px solid #f5c89a; }
+  .verdict.good { background: var(--lilac); color: var(--purple); border: 1px solid #e0cceb; }
+  .verdict.rich {
+    background: linear-gradient(90deg, var(--lilac), var(--peach));
+    color: var(--purple); border: 1px solid #e0cceb;
+  }
+  .track {
+    display: grid; gap: 8px; position: relative; margin: 8px 0 12px;
+  }
+  .track.n5 { grid-template-columns: repeat(5, 1fr); }
+  .track.n4 { grid-template-columns: repeat(4, 1fr); }
+  .track::before {
+    content: ""; position: absolute; top: 18px; left: 6%; right: 6%; height: 4px; border-radius: 4px;
+    background: linear-gradient(90deg, var(--purple), var(--magenta), var(--orange)); z-index: 0;
+  }
+  .node {
+    position: relative; z-index: 1; border: 0; background: transparent;
+    padding: 0 4px 6px; text-align: center; min-height: 44px;
+  }
+  .dot {
+    width: 16px; height: 16px; border-radius: 50%; margin: 11px auto 6px; display: block;
+    background: #fff; border: 4px solid var(--purple);
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.8);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .node:nth-child(3) .dot, .node:nth-child(4) .dot { border-color: var(--magenta); }
+  .node:nth-child(5) .dot, .track.n4 .node:nth-child(4) .dot { border-color: var(--orange); }
+  .node[aria-current="step"] .dot { transform: scale(1.35); border-color: var(--magenta); background: var(--magenta); }
+  .node .age { display: block; font-weight: 800; color: var(--purple); font-size: 0.95rem; }
+  .node .cap { display: block; color: var(--muted); font-size: 0.78rem; font-weight: 700; }
+  .node[aria-current="step"] .age { color: var(--rose); }
+  .tl-lab {
+    display: block; margin: 2px 0 10px; font-weight: 800; color: var(--purple); font-size: 0.92rem;
+  }
+  .tl-range {
+    -webkit-appearance: none; appearance: none;
+    display: block; width: 100%; height: 44px; margin: 6px 0 0;
+    background: transparent; touch-action: pan-x; cursor: grab;
+  }
+  .tl-range:active { cursor: grabbing; }
+  .tl-range::-webkit-slider-runnable-track {
+    height: 8px; border-radius: 999px;
+    background: linear-gradient(90deg, #5B2C6F, #E91E8C, #E67E22);
+  }
+  .tl-range::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 28px; height: 28px; margin-top: -10px; border-radius: 50%;
+    background: #fff; border: 4px solid #E91E8C;
+    box-shadow: 0 2px 8px rgba(91, 44, 111, 0.28);
+  }
+  .tl-range::-moz-range-track {
+    height: 8px; border-radius: 999px; border: 0;
+    background: linear-gradient(90deg, #5B2C6F, #E91E8C, #E67E22);
+  }
+  .tl-range::-moz-range-thumb {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; border: 4px solid #E91E8C;
+  }
+  .js .show-all .detail { display: block; margin-top: 8px; animation: none; }
+  .js .show-all .detail.on { border-color: var(--magenta); box-shadow: 0 0 0 2px rgba(233, 30, 140, 0.28); }
+  @keyframes hintpulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(233, 30, 140, 0.12); }
+    50% { box-shadow: 0 0 0 6px rgba(233, 30, 140, 0.38); }
+  }
+  .hint:not(details):not(.hint-off):not([aria-pressed="true"]):not([aria-selected="true"]) {
+    animation: hintpulse 1.7s ease-in-out infinite;
+  }
+  details.hint:not(.hint-off):not([open]) > summary {
+    animation: hintpulse 1.7s ease-in-out infinite;
+    border-radius: 14px;
+  }
+  .detail {
+    background: #fff; border-radius: 14px; border: 1px solid var(--line); padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .js .detail { display: none; }
+  .js .detail.on { display: block; animation: rise 0.3s ease; }
+  .detail h3 { margin: 0 0 6px; color: var(--purple); }
+  .detail p { margin: 0; }
+  .mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; }
+  .mini div { border-radius: 12px; padding: 10px; text-align: center; }
+  .mini b { display: block; font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+  .mini span { font-size: 0.8rem; font-weight: 700; }
+  .mini .a { background: var(--peach); color: var(--amber); }
+  .mini .b { background: var(--blush); color: var(--rose); }
+  .mini .c { background: var(--lilac); color: var(--purple); }
+  .phases { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .phases span {
+    border-radius: 999px; padding: 6px 12px; font-weight: 800; background: #fff; border: 1px solid var(--line); color: var(--muted);
+  }
+  .phases span.on { background: var(--purple); color: #fff; border-color: var(--purple); }
+  .lever {
+    margin-top: 12px; border-radius: 16px; padding: 16px;
+    background: linear-gradient(135deg, #5B2C6F 0%, #E91E8C 58%, #E67E22 130%);
+    color: #fff;
+  }
+  .lever h3 { margin: 0 0 10px; }
+  .lev {
+    display: grid; grid-template-columns: 1fr auto 1.2fr auto 1fr; gap: 8px; align-items: center; text-align: center;
+  }
+  .lev .box { background: rgba(255,255,255,0.16); border-radius: 12px; padding: 10px 6px; }
+  .lev b { display: block; font-size: clamp(1.2rem, 2.4vw, 1.7rem); font-variant-numeric: tabular-nums; }
+  .lev span { font-size: 0.82rem; opacity: 0.95; }
+  .arr { font-size: 1.5rem; font-weight: 800; }
+  .meter { margin-top: 12px; background: rgba(255,255,255,0.2); border-radius: 999px; overflow: hidden; height: 14px; display: flex; }
+  .meter i { display: block; height: 100%; }
+  .meter .in { width: 15%; background: #fff; }
+  .meter .flow { width: 70%; background: #ffd2ea; }
+  .meter .left { width: 15%; background: #ffd7b0; }
+  .meter-key { display: flex; gap: 12px; flex-wrap: wrap; font-size: 0.8rem; margin-top: 6px; }
+  .note {
+    background: #fff; border-radius: 14px; padding: 12px 14px; border: 1px dashed #e0cceb; color: var(--muted);
+  }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow);
+  }
+  .card h3 { border-bottom: 3px solid var(--magenta); display: inline-block; padding-bottom: 2px; }
+  .card.orange h3 { border-bottom-color: var(--orange); }
+  .card.full { grid-column: 1 / -1; }
+  .card ul { margin: 8px 0 0; padding-left: 1.15em; }
+  .card li { margin: 4px 0; }
+  .q { background: #fff; border: 1px solid var(--line); border-radius: 16px; margin-bottom: 10px; box-shadow: var(--shadow); overflow: hidden; }
+  .q summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; gap: 10px; align-items: center; }
+  .q summary::-webkit-details-marker { display: none; }
+  .q .num {
+    width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+    color: #fff; font-weight: 800; flex: none;
+  }
+  .q.q1 .num, .q.q4 .num { background: var(--purple); }
+  .q.q2 .num { background: var(--magenta); }
+  .q.q3 .num { background: var(--orange); }
+  .q summary strong { color: var(--purple); font-size: 1.05rem; }
+  .q summary .hint { margin-left: auto; color: var(--rose); font-weight: 800; }
+  .q p { margin: 0; padding: 0 16px 16px 62px; color: #3a2a45; }
+  .close {
+    text-align: center; margin-top: 16px; padding: 16px; border-radius: 16px;
+    background: var(--lilac); border: 1px dashed #d4b8e0;
+  }
+  .close p { margin: 0; color: var(--purple); font-weight: 800; font-size: 1.15rem; }
+  .close .sub { font-weight: 600; color: var(--muted); margin-top: 4px; font-size: 0.95rem; }
+  .recap {
+    margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .recap span {
+    background: #fff; border-radius: 999px; padding: 8px 12px; font-weight: 800;
+    border: 1px solid var(--line); color: var(--purple); font-size: 0.9rem;
+  }
+  .foot {
+    margin-top: 18px; padding-top: 10px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+    color: #7d6c86; font-size: 0.85rem; font-weight: 700;
+  }
+  .quiet { color: var(--muted); font-size: 0.92rem; }
+  @media (max-width: 800px) {
+    .choices, .stats, .grid2, .mini { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .lev { grid-template-columns: 1fr; }
+    .arr { transform: rotate(90deg); }
+    .track.n5, .track.n4 { grid-template-columns: 1fr; }
+    .track::before { left: 22px; right: auto; top: 12px; bottom: 12px; width: 4px; height: auto; }
+    .node { display: grid; grid-template-columns: 36px 1fr; text-align: left; align-items: center; column-gap: 6px; }
+    .dot { margin: 0; }
+    .node .cap { grid-column: 2; }
+    .q p { padding-left: 16px; }
+  }
+  @media (max-width: 560px) {
+    .choices, .grid2, .mini { grid-template-columns: 1fr; }
+    .table { display: block; border: 0; }
+    .table .h { display: none; }
+    .table .row {
+      display: block; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin-bottom: 8px; background: #fff;
+    }
+    .table .c { display: block; border-top: 1px solid var(--line); }
+    .table .c.span { text-align: left; }
+    .table .c.yes::before { content: "有專業規劃　"; color: var(--rose); }
+    .table .c.no::before { content: "沒有專業規劃　"; color: #666; }
+    .table .c.span::before { content: "兩種路徑相同　"; color: var(--purple); }
+  }
+
+  .brand .client {
+    display: block; color: var(--magenta); font-size: 1.18rem; font-weight: 800;
+    letter-spacing: 0.01em; line-height: 1.25; margin-bottom: 2px;
+  }
+  .brand b { font-size: 0.95rem; font-weight: 800; }
+  .brand span { display: block; margin-top: 2px; }
+  .page-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 12px; margin-bottom: 2px;
+  }
+  .page-head .kicker { margin: 0; }
+  .byline {
+    margin: 0; flex-shrink: 0; text-align: right;
+    font-size: 0.68rem; font-weight: 500; color: #9a8aa6;
+    letter-spacing: 0.01em; line-height: 1.35; padding-top: 2px;
+    white-space: nowrap;
+  }
+  @media (max-width: 560px) {
+    .byline { white-space: normal; max-width: 42vw; font-size: 0.62rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .hint:not(details):not(.hint-off):not([aria-pressed="true"]):not([aria-selected="true"]),
+    details.hint:not(.hint-off):not([open]) > summary {
+      box-shadow: 0 0 0 2px rgba(233, 30, 140, 0.55);
+    }
+  }
+</style>
+</head>
+<body data-emphasis="all">
+<a class="sr" href="#main">跳至內容</a>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <span class="client">Jackie的退休規劃方案</span>
+      <b>退休規劃建議報告</b>
+      <span>互動說明 · 只作參考之用</span>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="建議書章節">
+      <button role="tab" id="tab-1" class="hint" data-hint="tab-1" data-tab="1" aria-selected="true" aria-controls="panel-1">1 為何規劃</button>
+      <button role="tab" id="tab-2" class="hint" data-hint="tab-2" data-tab="2" aria-selected="false" aria-controls="panel-2" tabindex="-1">2 沒有規劃</button>
+      <button role="tab" id="tab-3" class="hint" data-hint="tab-3" data-tab="3" aria-selected="false" aria-controls="panel-3" tabindex="-1">3 有規劃</button>
+      <button role="tab" id="tab-4" class="hint" data-hint="tab-4" data-tab="4" aria-selected="false" aria-controls="panel-4" tabindex="-1">4 會面總結</button>
+      <button role="tab" id="tab-5" class="hint" data-hint="tab-5" data-tab="5" aria-selected="false" aria-controls="panel-5" tabindex="-1">5 下次探討</button>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+</header>
+<p class="sr" id="live" aria-live="polite"></p>
+<main id="main">
+
+<section class="view on" id="panel-1" data-page="1" role="tabpanel" aria-labelledby="tab-1">
+  <div class="page-head">
+  <p class="kicker"><i></i>第 1 頁 · 為何要做</p>
+    <p class="byline">by Regional Director - SANG Chan</p>
+  </div>
+  <h1>為何要做<em>專業退休規劃</em>？</h1>
+  <p class="lead">教師公積金制度優於一般強積金，惟單靠公積金未必足以同時兼顧提早退休與長壽生活所需。穩妥的安排，宜建立穩定、能夠隨通脹調整的現金流，而非僅依賴一筆將被逐步提用至罄的本金。</p>
+  <ul class="chips">
+    <li>現齡 45 歲</li>
+    <li>女教師</li>
+    <li>月薪約 HK$94,000</li>
+    <li class="pink">目標退休 55 歲</li>
+    <li class="orange">年開支現值約 HK$159,000</li>
+    <li>通脹 2.54%</li>
+  </ul>
+<div class="actions expand-row">
+    <button class="btn ghost hint" type="button" data-expand="1" data-hint="exp-1" aria-pressed="false">全部展開</button>
+  </div>
+    <div class="seg" role="group" aria-label="對照有規劃與沒有規劃">
+    <button type="button" class="hint" data-hint="path-all" data-set-path="all" aria-pressed="true">並排對照</button>
+    <button type="button" class="hint" data-hint="path-plan" data-set-path="plan" aria-pressed="false">聚焦有規劃</button>
+    <button type="button" class="hint" data-hint="path-none" data-set-path="none" aria-pressed="false">聚焦沒有規劃</button>
+  </div>
+  <div class="choices">
+    <article class="choice yes">
+      <span class="tag">有規劃</span>
+      <h2>提早退休成為選擇，長壽仍有緩衝</h2>
+      <ul>
+        <li>享有提早退休的選擇權</li>
+        <li>享有穩健豐盛、可長久的退休生活</li>
+        <li>55 歲可退；65 歲起抗通脹現金流接軌</li>
+        <li>播種 → 醞釀 → 收成，依序推進</li>
+        <li>投入約 HK$2,000,000 → 累計現金流約 HK$9,500,000，再加剩餘約 HK$2,000,000</li>
+      </ul>
+    </article>
+    <article class="choice no">
+      <span class="tag">沒有規劃</span>
+      <h2>提早退休無以為繼，正常退休亦欠緩衝</h2>
+      <ul>
+        <li>不能提早退休</li>
+        <li>退休不安全，坐食山崩</li>
+        <li>55 歲退：公積金約 HK$6,000,000，約於 77 歲耗盡</li>
+        <li>其後約有 13 年（78–90 歲）資金缺口</li>
+        <li>65 歲退：約 HK$10,000,000 可蠶食至約 90 歲，惟終歸歸零，並非抗通脹現金流</li>
+      </ul>
+    </article>
+  </div>
+  <div class="stats">
+    <div class="stat p"><b>約 HK$6,000,000</b><span>55 歲公積金 · 相同起點</span></div>
+    <div class="stat o"><b>約 HK$11,800,000</b><span>至 90 歲累計開支 · 相同目標</span></div>
+    <div class="stat m"><b>約 77 歲</b><span>沒有規劃 · 資金耗盡</span></div>
+    <div class="stat p"><b>約五倍以上</b><span>約 HK$2,000,000 → 逾 HK$11,500,000</span></div>
+  </div>
+  <div class="panel">
+    <h2>數字對照　假設: 提早55歲退休</h2>
+    <div class="table" role="table" aria-label="數字對照，假設提早55歲退休">
+      <div class="h dim" role="columnheader">數字維度</div>
+      <div class="h yes" role="columnheader">有專業規劃</div>
+      <div class="h no" role="columnheader">沒有專業規劃</div>
+      <div class="c dim" role="rowheader">55 歲可動用公積金</div>
+      <div class="c span" role="cell">約 HK$6,000,000（兩種路徑相同起點）</div>
+      <div class="c dim" role="rowheader">目標活至 90 歲累計開支</div>
+      <div class="c span" role="cell">約 HK$11,800,000（兩種路徑相同目標）</div>
+      <div class="c dim" role="rowheader">資金預計耗盡</div>
+      <div class="c yes" role="cell"><span class="ok">約至 90 歲仍有緩衝</span></div>
+      <div class="c no" role="cell"><span class="hi">約 77 歲</span></div>
+      <div class="c dim" role="rowheader">耗盡後至 90 歲的缺口</div>
+      <div class="c yes" role="cell">無缺口</div>
+      <div class="c no" role="cell">約 13 年（78–90 歲）</div>
+      <div class="c dim" role="rowheader">投入規劃供款</div>
+      <div class="c yes" role="cell">約 HK$2,000,000</div>
+      <div class="c no" role="cell">HK$0</div>
+      <div class="c dim" role="rowheader">至約 90 歲累計現金流</div>
+      <div class="c yes" role="cell">約 HK$9,500,000</div>
+      <div class="c no" role="cell">—</div>
+      <div class="c dim" role="rowheader">戶口剩餘價值</div>
+      <div class="c yes" role="cell">約 HK$2,000,000</div>
+      <div class="c no" role="cell">HK$0</div>
+      <div class="c dim" role="rowheader">緊急資金池</div>
+      <div class="c yes" role="cell">約 HK$2,000,000</div>
+      <div class="c no" role="cell">未能專款專用, 而且後期亦會被耗盡歸零</div>
+      <div class="c dim" role="rowheader">投入與產出</div>
+      <div class="c yes" role="cell">約五倍以上（約 HK$2,000,000 → 逾 HK$11,500,000）</div>
+      <div class="c no" role="cell">—</div>
+      <div class="c dim" role="rowheader">55 歲提早退休</div>
+      <div class="c yes" role="cell"><span class="ok">可行</span></div>
+      <div class="c no" role="cell"><span class="hi">不可行</span></div>
+    </div>
+  </div>
+  </div>
+  <details class="fold hint" data-hint="fold-qual">
+    <summary>展開質性比較：現金流、通脹、按揭與長壽</summary>
+    <div class="inner">
+      <div class="table" role="table" aria-label="質性比較">
+        <div class="h dim">比較維度</div>
+        <div class="h yes">有專業規劃</div>
+        <div class="h no">沒有專業規劃</div>
+        <div class="c dim">現金流</div>
+        <div class="c yes">65 歲起由規劃戶口持續提款，並隨通脹調整</div>
+        <div class="c no">依賴一筆過公積金，逐年提用至罄</div>
+        <div class="c dim">55 歲提早退休</div>
+        <div class="c yes">可作選擇，後期仍有緩衝</div>
+        <div class="c no">不可行，約 77 歲耗盡</div>
+        <div class="c dim">對抗通脹</div>
+        <div class="c yes">提款隨通脹調整；65 歲首年約 HK$262,581</div>
+        <div class="c no">固定本金，購買力隨通脹遞減</div>
+        <div class="c dim">按揭與緊急金</div>
+        <div class="c yes">55–60 歲清按揭約 HK$1,800,000，另剩約 HK$2,000,000 緊急池</div>
+        <div class="c no">生活與按揭互相擠壓，突發開支即加速耗盡</div>
+        <div class="c dim">長壽緩衝</div>
+        <div class="c yes">至約 90 歲戶口仍約 HK$2,000,000，另加銀行緊急金</div>
+        <div class="c no">本金歸零後沒有持續收入</div>
+      </div>
+    </div>
+  </details>
+  <div class="insight">
+    <strong>關鍵觀察。</strong>
+    許多教師因公積金制度較佳，不自覺以為毋須安排亦能享有理想退休；這只是感覺，能否滿足現實需要，仍須實質計算。退休並非單憑「擁有一筆本金」便可圓滿——本金經長年提用，終會歸零。專業規劃的要旨，是把一次性本金轉為可持續、抗通脹的現金流，並預留緊急緩衝。
+    <p class="gold">善用資產的時間差，可產生額外約 HK$9,500,000 退休現金流，使提早退休變得踏實。這筆額外現金流約相當於約八年年薪（月薪約 HK$94,000 × 12 × 8 ≈ HK$9,024,000）。</p>
+  </div>
+  <div class="actions">
+    <button class="btn hint" type="button" data-hint="cta-3" data-goto="3">看有規劃的時間軸</button>
+    <button class="btn ghost hint" type="button" data-hint="cta-2" data-goto="2">看沒有規劃的時間軸</button>
+  </div>
+  <p class="quiet">客戶：女教師 · 主要家人為母親 · 自置物業</p>
+  <footer class="foot"><span>只作參考之用</span><span>第 1／5 頁</span></footer>
+</section>
+
+<section class="view" id="panel-2" data-page="2" role="tabpanel" aria-labelledby="tab-2">
+  <div class="page-head">
+  <p class="kicker"><i></i>第 2 頁 · 沒有規劃</p>
+    <p class="byline">by Regional Director - SANG Chan</p>
+  </div>
+  <h1>沒有安排專業規劃的<em>人生時間軸</em></h1>
+  <p class="lead">以下可切換 55 歲與 65 歲兩種情景。假設僅依靠教師公積金、不計額外投資回報，開支按通脹 2.54% 遞增。拖行滑桿可看該段說明。</p>
+  <ul class="chips">
+    <li>年開支現值約 HK$159,000</li>
+    <li class="orange">通脹 2.54%</li>
+    <li class="pink">提取後不再有投資回報</li>
+  </ul>
+<div class="actions expand-row">
+    <button class="btn ghost hint" type="button" data-expand="2" data-hint="exp-2" aria-pressed="false">全部展開</button>
+  </div>
+    <div class="toolbar">
+    <div class="seg" role="group" aria-label="規劃路徑">
+      <button type="button" class="hint" data-hint="goto-2" data-goto="2" aria-pressed="true">沒有規劃</button>
+      <button type="button" class="hint" data-hint="goto-3" data-goto="3" aria-pressed="false">有規劃</button>
+    </div>
+    <div class="seg warm" role="group" aria-label="退休年齡情景">
+      <button type="button" class="hint" data-hint="age-55" data-set-age="55" aria-pressed="true">情景 A · 55 歲</button>
+      <button type="button" class="hint" data-hint="age-65" data-set-age="65" aria-pressed="false">情景 B · 65 歲</button>
+    </div>
+  </div>
+
+  <div data-age-panel="55" class="on">
+    <p class="quiet">情景 A · 公積金約 HK$6,000,000 · 純蠶食 · 首年開支面值約 HK$204,329</p>
+    <div class="verdict bad">總結：不能提早退休</div>
+    <div class="mini">
+      <div class="a"><b>約 HK$204,329</b><span>55 歲首年開支面值</span></div>
+      <div class="b"><b>約 77 歲</b><span>資金耗盡 · 覆蓋約 23 年</span></div>
+      <div class="c"><b>約 13 年</b><span>78–90 歲資金缺口</span></div>
+    </div>
+    <div class="track n5">
+      <div class="node" aria-current="step"><span class="dot"></span><span class="age">45 歲</span><span class="cap">現在 · 在職</span></div>
+      <div class="node"><span class="dot"></span><span class="age">55 歲</span><span class="cap">提早退 · 純蠶食</span></div>
+      <div class="node"><span class="dot"></span><span class="age">65 歲</span><span class="cap">本金持續消耗</span></div>
+      <div class="node"><span class="dot"></span><span class="age">約 77 歲</span><span class="cap">資金約耗盡</span></div>
+      <div class="node"><span class="dot"></span><span class="age">78–90 歲</span><span class="cap">約 13 年缺口</span></div>
+    </div>
+    <label class="tl-lab">拖行滑桿
+      <input type="range" class="tl-range hint" data-hint="tl-n2a" min="0" max="4" step="1" value="0" aria-label="沒有規劃、55 歲時間軸">
+    </label>
+    <div class="detail on" id="n2a1"><h3>45 歲 · 在職，尚未另作規劃</h3><p>月薪約 HK$94,000。自置物業仍有按揭。年開支現值約 HK$159,000（月基本開支現值約 HK$12,000，另加年特別開支現值約 HK$15,000）。生活目前由薪金承擔，退休資金仍未分開安排。</p></div>
+    <div class="detail" id="n2a2"><h3>55 歲 · 一筆過提取，開始純蠶食</h3><p>教師公積金須於退休時一筆過提取，約 HK$6,000,000；提取後不再有投資回報。首年開支面值約 HK$204,329，同時仍要面對剩餘按揭。其後只靠本金支付開支。</p></div>
+    <div class="detail" id="n2a3"><h3>65 歲 · 本金仍在減少</h3><p>開支再隨通脹上升，年開支面值約至 HK$262,581 量級。本金購買力持續下降，戶口沒有新的投資回報補上。</p></div>
+    <div class="detail" id="n2a4"><h3>約 77 歲 · 資金耗盡</h3><p>由 55 歲起純蠶食、不計額外回報，約 HK$6,000,000 大概只覆蓋約 23 年（55 歲至 77 歲）。資金約於 77 歲用完。</p></div>
+    <div class="detail" id="n2a5"><h3>78–90 歲 · 約 13 年缺口</h3><p>若希望生活至約 90 歲，耗盡之後約有 13 年難以維持目標生活水平。至 90 歲的累計開支約 HK$11,800,000，遠超當初那一筆公積金。</p></div>
+  </div>
+
+  <div data-age-panel="65">
+    <p class="quiet">情景 B · 公積金約 HK$10,000,000 · 純蠶食 · 可覆蓋至約 90 歲，惟終歸歸零</p>
+    <div class="verdict warn">總結：沒有緩衝的退休</div>
+    <div class="mini">
+      <div class="a"><b>約 HK$10,000,000</b><span>65 歲可動用公積金</span></div>
+      <div class="b"><b>約 HK$262,581</b><span>65 歲首年開支面值量級</span></div>
+      <div class="c"><b>約 90 歲歸零</b><span>可蠶食至終點，但沒有剩餘</span></div>
+    </div>
+    <div class="track n4">
+      <div class="node" aria-current="step"><span class="dot"></span><span class="age">45 歲</span><span class="cap">在職至 65 歲</span></div>
+      <div class="node"><span class="dot"></span><span class="age">65 歲</span><span class="cap">提取約 HK$1,000 萬</span></div>
+      <div class="node"><span class="dot"></span><span class="age">75 歲</span><span class="cap">本金持續消耗</span></div>
+      <div class="node"><span class="dot"></span><span class="age">約 90 歲</span><span class="cap">本金約歸零</span></div>
+    </div>
+    <label class="tl-lab">拖行滑桿
+      <input type="range" class="tl-range hint" data-hint="tl-n2b" min="0" max="3" step="1" value="0" aria-label="沒有規劃、65 歲時間軸">
+    </label>
+    <div class="detail on" id="n2b1"><h3>45 歲 · 延至 65 歲才提取</h3><p>繼續在職並累積公積金，生活開支仍由薪金承擔。提取時點推後十年，按揭或已清還，或已接近清還。延遲起步，只是把純蠶食押後，路徑本質未變。</p></div>
+    <div class="detail" id="n2b2"><h3>65 歲 · 一筆過約 HK$10,000,000</h3><p>退休時提取公積金約 HK$10,000,000，其後以這筆本金應付生活。首年開支面值約 HK$262,581。提取之後不再有投資回報。</p></div>
+    <div class="detail" id="n2b3"><h3>75 歲 · 購買力下降</h3><p>本金逐年提出來用，開支卻隨通脹上升。這不是抗通脹的持續現金流。突發開支會加快耗盡，也沒有獨立的緊急資金池。</p></div>
+    <div class="detail" id="n2b4"><h3>約 90 歲 · 剛好用完，並非有餘</h3><p>按相同通脹與開支假設，這筆公積金大致可蠶食至約 90 歲，但終點是本金歸零：沒有持續收入，也沒有留下緩衝。對長壽與突發需要的韌性仍然有限。</p></div>
+  </div>
+
+  <div class="note" style="margin-top:14px">
+    <strong style="color:var(--purple)">兩種情景的共通點。</strong>
+    無論 55 歲或 65 歲退休，單靠公積金純蠶食，本質都是「本金終會歸零」。差別主要在耗盡的時點。兩條路都尚未建立抗通脹現金流，也沒有獨立緊急緩衝。教師公積金必須在退休時一筆過提取，提取後不再有投資回報。
+  </div>
+  <footer class="foot"><span>只作參考之用</span><span>第 2／5 頁</span></footer>
+</section>
+
+<section class="view" id="panel-3" data-page="3" role="tabpanel" aria-labelledby="tab-3">
+  <div class="page-head">
+  <p class="kicker"><i></i>第 3 頁 · 有規劃</p>
+    <p class="byline">by Regional Director - SANG Chan</p>
+  </div>
+  <h1>有安排專業規劃的<em>人生時間軸</em></h1>
+  <p class="lead">建議以專業退休規劃為核心，分播種、醞釀、收成三階段。55 歲與 65 歲可切換對照。數字沿用既有估算，未另作推算。</p>
+<div class="actions expand-row">
+    <button class="btn ghost hint" type="button" data-expand="3" data-hint="exp-3" aria-pressed="false">全部展開</button>
+  </div>
+    <div class="toolbar">
+    <div class="seg" role="group" aria-label="規劃路徑">
+      <button type="button" class="hint" data-hint="goto-2" data-goto="2" aria-pressed="false">沒有規劃</button>
+      <button type="button" class="hint" data-hint="goto-3" data-goto="3" aria-pressed="true">有規劃</button>
+    </div>
+    <div class="seg warm" role="group" aria-label="退休年齡情景">
+      <button type="button" class="hint" data-hint="age-55" data-set-age="55" aria-pressed="true">情景 A · 55 歲</button>
+      <button type="button" class="hint" data-hint="age-65" data-set-age="65" aria-pressed="false">情景 B · 65 歲</button>
+    </div>
+  </div>
+
+  <div data-age-panel="55" class="on">
+    <div class="phases" aria-hidden="true">
+      <span data-phase-chip="seed" class="on">播種 · 45–55 歲</span>
+      <span data-phase-chip="grow">醞釀 · 55–65 歲</span>
+      <span data-phase-chip="harvest">收成 · 65 歲起</span>
+    </div>
+    <p class="quiet">情景 A · 45 歲起播種 · 55 歲用公積金過渡 · 65 歲起抗通脹提款 · 至約 90 歲仍有緩衝</p>
+    <div class="verdict good">總結：享受提早退休</div>
+    <div class="mini">
+      <div class="a"><b>約 HK$2,000,000</b><span>十年累計投入</span></div>
+      <div class="b"><b>約 HK$9,500,000</b><span>至約 90 歲累計提款</span></div>
+      <div class="c"><b>約 HK$2,000,000</b><span>戶口剩餘，另加緊急池</span></div>
+    </div>
+    <div class="track n5">
+      <div class="node" data-phase="seed" aria-current="step"><span class="dot"></span><span class="age">45 歲</span><span class="cap">起供 · 播種</span></div>
+      <div class="node" data-phase="grow"><span class="dot"></span><span class="age">55 歲</span><span class="cap">提早退休</span></div>
+      <div class="node" data-phase="grow"><span class="dot"></span><span class="age">約 60 歲</span><span class="cap">清按揭 · 緊急金</span></div>
+      <div class="node" data-phase="harvest"><span class="dot"></span><span class="age">65 歲</span><span class="cap">開始提款</span></div>
+      <div class="node" data-phase="harvest"><span class="dot"></span><span class="age">約 90 歲</span><span class="cap">仍有緩衝</span></div>
+    </div>
+    <label class="tl-lab">拖行滑桿
+      <input type="range" class="tl-range hint" data-hint="tl-n3a" min="0" max="4" step="1" value="0" aria-label="有規劃、55 歲時間軸">
+    </label>
+    <div class="detail on" id="n3a1"><h3>播種 · 45 至 55 歲</h3><p>每年約 HK$200,000，連續約 10 年，累計投入約 HK$2,000,000。期間仍在職，並繼續累積公積金。這十年是把未來現金流先種下去。</p></div>
+    <div class="detail" id="n3a2"><h3>55 歲 · 提早退休，公積金作過渡</h3><p>提取公積金約 HK$6,000,000，用作過渡期的生活來源。規劃戶口繼續成長，尚未開始主要提款，提早退休因此變得可行。</p></div>
+    <div class="detail" id="n3a3"><h3>約 55 至 60 歲 · 按揭與緊急池分開</h3><p>這段時間清還按揭約 HK$1,800,000。公積金用剩約 HK$2,000,000，撥作緊急資金池，與規劃戶口分開管理，突發需要不必先動用退休現金流。</p></div>
+    <div class="detail" id="n3a4"><h3>收成 · 65 歲起通脹掛鈎提款</h3><p>由 65 歲開始提取，首年約 HK$262,581，對應屆時的目標生活水平，其後隨通脹調整，而不是鎖死一筆愈用愈少的本金。</p></div>
+    <div class="detail" id="n3a5"><h3>約 90 歲 · 用過仍有剩餘</h3><p>累計提款約 HK$9,500,000，戶口剩餘約 HK$2,000,000，銀行裡另有緊急金。長壽階段仍留有緩衝，而不是在中途歸零。</p></div>
+    <div class="lever">
+      <h3>情景 A · 投入與產出</h3>
+      <div class="lev">
+        <div class="box"><b>≈ HK$2,000,000</b><span>累計投入（播種）</span></div>
+        <div class="arr">→</div>
+        <div class="box"><b>≈ HK$9,500,000</b><span>累計現金流（至約 90 歲）</span></div>
+        <div class="arr">＋</div>
+        <div class="box"><b>≈ HK$2,000,000</b><span>戶口剩餘價值</span></div>
+      </div>
+      <div class="meter" aria-hidden="true"><i class="in"></i><i class="flow"></i><i class="left"></i></div>
+      <div class="meter-key"><span>白 · 投入</span><span>粉 · 現金流</span><span>橙 · 剩餘</span></div>
+      <p>合計資產效果逾約 HK$11,500,000（約五倍以上）。相對投入，約增加 HK$9,500,000 的現金流與剩餘價值。對照沒有規劃的 55 歲路徑：約於 77 歲耗盡，其後約有 13 年缺口。</p>
+    </div>
+  </div>
+
+  <div data-age-panel="65">
+    <p class="quiet">情景 B · 規劃戶口支撐整段退休 · 公積金約 HK$10,000,000 可再提升生活質素 · 不另設第二套數字</p>
+    <div class="verdict rich">總結：優越的退休生活</div>
+    <div class="mini">
+      <div class="c"><b>抗通脹現金流</b><span>規劃戶口為主要收入</span></div>
+      <div class="a"><b>約 HK$10,000,000</b><span>65 歲公積金 · 可提升質素</span></div>
+      <div class="b"><b>不另設數字</b><span>供款與提款待下次按起步年期再定</span></div>
+    </div>
+    <div class="track n4">
+      <div class="node" aria-current="step"><span class="dot"></span><span class="age">45 歲</span><span class="cap">可開始或調整</span></div>
+      <div class="node"><span class="dot"></span><span class="age">65 歲</span><span class="cap">規劃戶口主軸</span></div>
+      <div class="node"><span class="dot"></span><span class="age">65 歲起</span><span class="cap">公積金提升質素</span></div>
+      <div class="node"><span class="dot"></span><span class="age">約 90 歲</span><span class="cap">仍可從容</span></div>
+    </div>
+    <label class="tl-lab">拖行滑桿
+      <input type="range" class="tl-range hint" data-hint="tl-n3b" min="0" max="3" step="1" value="0" aria-label="有規劃、65 歲時間軸">
+    </label>
+    <div class="detail on" id="n3b1"><h3>45 歲 · 播種年期可以調整</h3><p>若選擇 65 歲才退休，仍建議及早以專業規劃作主軸。供款銀碼與年期，視可支配收入與目標生活水平而定；較晚起步亦可以。本情景不另設第二套數字，具體安排留待下次會面，按實際起步年期再定。</p></div>
+    <div class="detail" id="n3b2"><h3>65 歲 · 主要收入來自規劃戶口</h3><p>專業規劃宜作為主要退休收入，以抗通脹提款支撐整段退休生活，並在戶口內保留緩衝，而不是把生活完全押在一筆會用完的公積金上。</p></div>
+    <div class="detail" id="n3b3"><h3>公積金約 HK$10,000,000 · 用來錦上添花</h3><p>延至 65 歲，公積金約達 HK$10,000,000。這筆資金可按能力與意願，進一步提升退休生活質素，並保留獨立緊急緩衝，而不是被迫成為唯一的生活本金。</p></div>
+    <div class="detail" id="n3b4"><h3>約 90 歲 · 對照之下仍有餘地</h3><p>沒有規劃的 65 歲路徑，終點仍是本金歸零。有規劃則以持續現金流為主軸，長壽階段仍可保留剩餘價值。這是更從容、而不是僅僅「剛剛好用完」的安排。</p></div>
+  </div>
+  <footer class="foot"><span>只作參考之用</span><span>第 3／5 頁</span></footer>
+</section>
+
+<section class="view" id="panel-4" data-page="4" role="tabpanel" aria-labelledby="tab-4">
+  <div class="page-head">
+  <p class="kicker"><i></i>第 4 頁 · 第一次會面</p>
+    <p class="byline">by Regional Director - SANG Chan</p>
+  </div>
+  <h1>第一次專業退休規劃<em>會面總結</em></h1>
+  <p class="lead">以下整理今次會面已確認的事實與框架數字，方便雙方對照、也方便下次跟進。所有數字沿用既有估算，沒有另作推算。</p>
+<div class="actions expand-row">
+    <button class="btn ghost hint" type="button" data-expand="4" data-hint="exp-4" aria-pressed="false">全部展開</button>
+  </div>
+    <div class="grid2">
+    <article class="card">
+      <h3>客戶基本檔</h3>
+      <ul>
+        <li>現齡 45 歲；女教師</li>
+        <li>月薪約 HK$94,000</li>
+        <li>自置物業；主要家人為母親</li>
+        <li>目標退休年齡：55 歲</li>
+      </ul>
+    </article>
+    <article class="card pink">
+      <h3>目標生活水平與通脹</h3>
+      <ul>
+        <li>月基本開支現值約 HK$12,000</li>
+        <li>年特別開支現值約 HK$15,000</li>
+        <li>年開支現值合計約 HK$159,000</li>
+        <li>通脹假設：2.54%</li>
+      </ul>
+    </article>
+    <article class="card orange">
+      <h3>公積金估算（兩個時點）</h3>
+      <ul>
+        <li>55 歲可動用：約 HK$6,000,000</li>
+        <li>65 歲可動用：約 HK$10,000,000</li>
+        <li>沒有規劃、55 歲退：約於 77 歲耗盡，其後約 13 年缺口</li>
+        <li>沒有規劃、65 歲退：可蠶食至約 90 歲，惟終歸歸零</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>按揭與緊急資金</h3>
+      <ul>
+        <li>預計清還按揭約 HK$1,800,000（約 55–60 歲）</li>
+        <li>公積金用剩約 HK$2,000,000，作緊急資金池</li>
+        <li>緊急池與規劃戶口分開管理，提高突發時的韌性</li>
+      </ul>
+    </article>
+    <article class="card full">
+      <h3>建議方案框架 · 情景 A（55 歲提早退休）</h3>
+      <ul>
+        <li>播種：約 45 歲起，每年約 HK$200,000 × 10 年；累計投入約 HK$2,000,000</li>
+        <li>醞釀：55 歲提早退休，以公積金約 HK$6,000,000 過渡生活；清按揭後保留緊急金約 HK$2,000,000</li>
+        <li>收成：65 歲起通脹掛鈎提款，首年約 HK$262,581</li>
+        <li>至約 90 歲：累計提款約 HK$9,500,000；戶口剩餘約 HK$2,000,000</li>
+      </ul>
+    </article>
+    <article class="card full orange">
+      <h3>情景 B（65 歲退休）只作方向，不另設第二套數字</h3>
+      <ul>
+        <li>專業規劃仍作為主要退休收入，以抗通脹提款支撐整段生活</li>
+        <li>公積金約 HK$10,000,000，可按能力進一步提升生活質素</li>
+        <li>供款與提款細節，待下次會面按實際起步年期再定</li>
+      </ul>
+    </article>
+  </div>
+  <div class="lever" style="margin-top:14px">
+    <h3>投入與產出對照</h3>
+    <div class="lev">
+      <div class="box"><b>≈ HK$2,000,000</b><span>累計投入</span></div>
+      <div class="arr">→</div>
+      <div class="box"><b>≈ HK$9,500,000</b><span>累計現金流</span></div>
+      <div class="arr">＋</div>
+      <div class="box"><b>≈ HK$2,000,000</b><span>戶口剩餘</span></div>
+    </div>
+    <p>合計資產效果逾約 HK$11,500,000（約五倍以上）。額外約 HK$9,500,000 退休現金流，約相當於約八年年薪。這樣，55 歲提早退休在數字上具備可行性，長壽階段亦保留緩衝。</p>
+  </div>
+  <div class="note" style="margin-top:12px">下次會面會在這個已確認的框架上，再釐清起步時機、供款銀碼，以及其他金融工具的客觀對比。四項待探討問題見下一頁。</div>
+  <div class="actions">
+    <button class="btn pink hint" type="button" data-hint="cta-5" data-goto="5">看四項待探討問題</button>
+  </div>
+  <footer class="foot"><span>只作參考之用</span><span>第 4／5 頁</span></footer>
+</section>
+
+<section class="view" id="panel-5" data-page="5" role="tabpanel" aria-labelledby="tab-5">
+  <div class="page-head">
+  <p class="kicker"><i></i>第 5 頁 · 下次會面</p>
+    <p class="byline">by Regional Director - SANG Chan</p>
+  </div>
+  <h1>還有什麼我們需要<em>探討</em>？</h1>
+  <p class="lead">以上是框架建議。下一步可按現金流、風險承受與家庭需要再微調。以下四項值得在下次會面一起釐清——先問清楚，再決定。點開每一題可看今次先記下的思考方向。</p>
+  <div class="actions expand-row" style="margin-bottom:12px">
+    <button class="btn ghost hint" type="button" data-expand="5" data-hint="exp-5" aria-pressed="false">全部展開</button>
+  </div>
+  <details class="q q1 hint" data-hint="q1">
+    <summary><span class="num">1</span><strong>什麼時候開始，性價比最高？</strong><span class="hint">展開</span></summary>
+    <p>若要對齊 55 歲提早退休目標，起步時機應如何與目前的可支配收入、短期大額支出（例如母親照顧或物業維修）一併衡量？</p>
+  </details>
+  <details class="q q2 hint" data-hint="q2">
+    <summary><span class="num">2</span><strong>更仔細地設計供款銀碼</strong><span class="hint">展開</span></summary>
+    <p>在職期間生活質素、緊急備用金、與母親相關的開支預留之間，怎樣的供款區間才既可負擔、又能支撐目標生活水平？</p>
+  </details>
+  <details class="q q3 hint" data-hint="q3">
+    <summary><span class="num">3</span><strong>其他金融產品的對比</strong><span class="hint">展開</span></summary>
+    <p>除本規劃產品外，還有哪些金融工具值得放上同一張比較表，從現金流穩定性、通脹對沖、流動性與長壽緩衝一併檢視？</p>
+  </details>
+  <details class="q q4 hint" data-hint="q4">
+    <summary><span class="num">4</span><strong>供款來源，可否不必只靠薪金？</strong><span class="hint">展開</span></summary>
+    <p>下次會面將為客戶宏觀分析供款來源，例如現有基金投資戶口價值、銀行存款等，看看能否分擔起步供款，而不必只從薪金拿出。舉一簡潔例子：若把一部分現有存款或基金價值，與日後薪金供款分開安排，開始時或可更從容。銀碼與組合留待下次再算，今日並不鎖定方案。</p>
+  </details>
+  <div class="close">
+    <p>下次會面，一起把這四題釐清。</p>
+    <p class="sub">本頁只列待探討問題，不預設結論或推薦。</p>
+  </div>
+  <h2 style="margin:18px 0 8px;color:var(--purple);font-size:1.05rem">回顧今日框架（方便下次對照）</h2>
+  <div class="recap">
+    <span>45 歲起播種</span>
+    <span>55 歲提早退休可行</span>
+    <span>65 歲抗通脹提款</span>
+    <span>投入約 HK$2,000,000 → 效果逾約 HK$11,500,000</span>
+    <span>沒有規劃、55 歲退：約 77 歲耗盡 · 13 年缺口</span>
+  </div>
+  <footer class="foot"><span>只作參考之用</span><span>第 5／5 頁</span></footer>
+</section>
+</main>
+<script>
+(function () {
+  var page = 1;
+  var age = "55";
+  var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-tab]"));
+  var views = Array.prototype.slice.call(document.querySelectorAll("[data-page]"));
+  var bar = document.getElementById("bar");
+  var live = document.getElementById("live");
+  var STORE = "rp-hints-v1";
+  var used = {};
+  try { used = JSON.parse(sessionStorage.getItem(STORE) || "{}") || {}; } catch (e) { used = {}; }
+
+  function saveUsed() {
+    try { sessionStorage.setItem(STORE, JSON.stringify(used)); } catch (e) {}
+  }
+  function markUsed(id) {
+    if (!id || used[id]) {
+      if (id) document.querySelectorAll('[data-hint="' + id + '"]').forEach(function (el) { el.classList.add("hint-off"); });
+      return;
+    }
+    used[id] = 1;
+    saveUsed();
+    document.querySelectorAll('[data-hint="' + id + '"]').forEach(function (el) { el.classList.add("hint-off"); });
+  }
+  function applyStoredHints() {
+    Object.keys(used).forEach(function (id) {
+      document.querySelectorAll('[data-hint="' + id + '"]').forEach(function (el) { el.classList.add("hint-off"); });
+    });
+  }
+
+  function selectNode(node) {
+    var panel = node.closest("[data-age-panel]");
+    if (!panel) return;
+    var nodes = Array.prototype.slice.call(panel.querySelectorAll(".node"));
+    nodes.forEach(function (n) {
+      if (n === node) n.setAttribute("aria-current", "step");
+      else n.removeAttribute("aria-current");
+    });
+    var idx = nodes.indexOf(node);
+    var details = panel.querySelectorAll(".detail");
+    details.forEach(function (d, i) { d.classList.toggle("on", i === idx); });
+    var phase = node.getAttribute("data-phase");
+    panel.querySelectorAll("[data-phase-chip]").forEach(function (chip) {
+      chip.classList.toggle("on", chip.getAttribute("data-phase-chip") === phase);
+    });
+    var range = panel.querySelector(".tl-range");
+    if (range && String(range.value) !== String(idx)) range.value = String(idx);
+    var current = details[idx];
+    if (range && current) {
+      var title = current.querySelector("h3");
+      range.setAttribute("aria-valuetext", title ? title.textContent : "");
+    }
+  }
+
+  function applyAge() {
+    document.querySelectorAll("[data-age-panel]").forEach(function (panel) {
+      var on = panel.getAttribute("data-age-panel") === age;
+      panel.classList.toggle("on", on);
+      if (!on) return;
+      var nodes = Array.prototype.slice.call(panel.querySelectorAll(".node"));
+      var current = nodes.filter(function (n) { return n.getAttribute("aria-current") === "step"; })[0] || nodes[0];
+      if (current) selectNode(current);
+    });
+    document.querySelectorAll("[data-set-age]").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-set-age") === age ? "true" : "false");
+    });
+  }
+
+  function show(n, opts) {
+    opts = opts || {};
+    page = n;
+    views.forEach(function (view) {
+      var on = Number(view.getAttribute("data-page")) === n;
+      view.classList.toggle("on", on);
+      if (on) view.removeAttribute("hidden");
+      else view.setAttribute("hidden", "");
+    });
+    tabs.forEach(function (tab) {
+      var on = Number(tab.getAttribute("data-tab")) === n;
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+      tab.tabIndex = on ? 0 : -1;
+    });
+    document.querySelectorAll("[data-goto]").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", Number(btn.getAttribute("data-goto")) === n ? "true" : "false");
+    });
+    if (bar) bar.style.width = (n / 5 * 100) + "%";
+    applyAge();
+    markUsed("tab-" + n);
+    if (live) live.textContent = "已開啟第 " + n + " 頁";
+    if (!opts.keepHash) {
+      try { history.replaceState(null, "", "#p" + n); } catch (e) {}
+    }
+    if (!opts.noScroll) window.scrollTo(0, 0);
+  }
+
+  function isFullyOpen(view) {
+    var details = view.querySelectorAll("details");
+    var i;
+    for (i = 0; i < details.length; i++) if (!details[i].open) return false;
+    if (view.querySelector(".tl-range") || !details.length) return view.classList.contains("show-all");
+    return true;
+  }
+  function paintExpand(view) {
+    var btn = view.querySelector("[data-expand]");
+    if (!btn) return;
+    var open = isFullyOpen(view);
+    btn.textContent = open ? "全部收合" : "全部展開";
+    btn.setAttribute("aria-pressed", open ? "true" : "false");
+  }
+  function toggleExpand(view) {
+    var open = !isFullyOpen(view);
+    if (view.querySelector(".tl-range") || !view.querySelector("details")) view.classList.toggle("show-all", open);
+    else if (!open) view.classList.remove("show-all");
+    else view.classList.add("show-all");
+    view.querySelectorAll("details").forEach(function (d) { d.open = open; });
+    if (open) {
+      view.querySelectorAll("details.hint").forEach(function (d) { markUsed(d.getAttribute("data-hint")); });
+      view.querySelectorAll(".tl-range").forEach(function (r) { markUsed(r.getAttribute("data-hint")); });
+    }
+    var btn = view.querySelector("[data-expand]");
+    if (btn) markUsed(btn.getAttribute("data-hint"));
+    paintExpand(view);
+    if (live) live.textContent = open ? "已展開本頁全部說明" : "已收合本頁補充說明";
+  }
+
+  document.addEventListener("click", function (e) {
+    var tab = e.target.closest("[data-tab]");
+    if (tab) {
+      markUsed(tab.getAttribute("data-hint"));
+      show(Number(tab.getAttribute("data-tab")));
+      return;
+    }
+    var expand = e.target.closest("[data-expand]");
+    if (expand) {
+      toggleExpand(expand.closest("[data-page]"));
+      return;
+    }
+    var go = e.target.closest("[data-goto]");
+    if (go) {
+      markUsed(go.getAttribute("data-hint"));
+      show(Number(go.getAttribute("data-goto")));
+      return;
+    }
+    var ag = e.target.closest("[data-set-age]");
+    if (ag) {
+      markUsed(ag.getAttribute("data-hint"));
+      age = ag.getAttribute("data-set-age");
+      applyAge();
+      if (live) live.textContent = age === "55" ? "已切換至 55 歲情景" : "已切換至 65 歲情景";
+      return;
+    }
+    var pathBtn = e.target.closest("[data-set-path]");
+    if (pathBtn) {
+      markUsed(pathBtn.getAttribute("data-hint"));
+      var path = pathBtn.getAttribute("data-set-path");
+      document.body.setAttribute("data-emphasis", path);
+      document.querySelectorAll("[data-set-path]").forEach(function (b) {
+        b.setAttribute("aria-pressed", b === pathBtn ? "true" : "false");
+      });
+      return;
+    }
+  });
+
+  document.querySelectorAll(".tl-range").forEach(function (input) {
+    input.addEventListener("input", function () {
+      var panel = input.closest("[data-age-panel]");
+      var nodes = panel.querySelectorAll(".node");
+      var i = Number(input.value);
+      if (nodes[i]) selectNode(nodes[i]);
+      markUsed(input.getAttribute("data-hint"));
+      var title = panel.querySelector(".detail.on h3");
+      if (live && title) live.textContent = title.textContent;
+    });
+  });
+
+  document.querySelectorAll("details.hint").forEach(function (d) {
+    d.addEventListener("toggle", function () {
+      if (d.open) markUsed(d.getAttribute("data-hint"));
+      var view = d.closest("[data-page]");
+      if (view) paintExpand(view);
+    });
+  });
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("keydown", function (e) {
+      var keys = ["ArrowRight", "ArrowLeft", "Home", "End"];
+      if (keys.indexOf(e.key) === -1) return;
+      e.preventDefault();
+      var i = tabs.indexOf(tab);
+      if (e.key === "ArrowRight") i = (i + 1) % tabs.length;
+      if (e.key === "ArrowLeft") i = (i + tabs.length - 1) % tabs.length;
+      if (e.key === "Home") i = 0;
+      if (e.key === "End") i = tabs.length - 1;
+      show(i + 1);
+      tabs[i].focus();
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    var tag = (e.target.tagName || "").toLowerCase();
+    if (tag === "input" || tag === "textarea" || e.target.isContentEditable) return;
+    if (e.key >= "1" && e.key <= "5") show(Number(e.key));
+  });
+
+  applyStoredHints();
+  var fromHash = (location.hash || "").match(/^#p([1-5])$/);
+  show(fromHash ? Number(fromHash[1]) : 1, { noScroll: true, keepHash: true });
+})();
+</script>
+</body>
+</html>
